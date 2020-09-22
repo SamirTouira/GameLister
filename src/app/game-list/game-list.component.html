@@ -12,7 +12,7 @@
     <!-- No data shows when their is no student data available -->
     <div class="no-data text-center" *ngIf="noData">
       
-      <p class="nodata-msg">No student added yet!</p>
+      <p class="nodata-msg">No game added yet!</p>
       <a routerLink="/register-game" class="btn btn-success">
         <i class="fas fa-plus custom-fa-plus"></i>
         Add a new Game
@@ -41,7 +41,7 @@
             <td style="margin-top:50px;"><img src={{game.photo}} style="width: 300px; height: 100px;"/> </td>
             <td class="text-center action-block">
               <!-- routerLink="/game-edit/{{student.$key}}" is refered to { path: 'game-edit/:id', component: EditStudentComponent } in app-routing.moudles.ts -->
-              <i class="far fa-edit" routerLink="/game-edit/{{game.$key}}"></i>
+              <i class="far fa-edit" routerLink="/game-edit/{{game.$key}}"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <i class="far fa-trash-alt" (click)="deleteGame(game)"></i></td>
           </tr>
         </tbody>

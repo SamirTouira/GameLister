@@ -23,7 +23,7 @@ import { GameListComponent } from './game-list/game-list.component';
 
 // Routes array define component along with the path name for url
 const routes: Routes = [
-  { path: '', redirectTo: '/register-game', pathMatch: 'full' },
+  { path: '', redirectTo: '/game-list', pathMatch: 'full' },
   { path: 'register-game', component: GameCreateComponent },
   { path: 'game-list', component: GameListComponent },
   { path: 'game-edit/:id', component: GameEditComponent }
