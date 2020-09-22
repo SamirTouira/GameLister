@@ -1,7 +1,5 @@
 <div class="pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Add a Game</h1>
-    <p class="custom-text">A demo CRUD built with <strong>Angular 10
-        and Firebase</strong></p>
   </div>
   
   <!-- Student form -->
@@ -25,7 +23,7 @@
             <label>Description</label>
             <input type="text" formControlName="description" class="form-control" required>
             <!-- Showing errors using getter method -->
-            <p *ngIf="description.touched && description.invalid" class="error"><sup>*</sup>Please provide Description</p>
+            <p *ngIf="description.touched && description.invalid" class="error"><sup>*</sup>Please provide a description</p>
             <br/>
           </div>
 

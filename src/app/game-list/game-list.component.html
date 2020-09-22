@@ -3,10 +3,10 @@
     <!-- It won't show if there is no student data -->
     <a routerLink="/register-game" class="btn btn-success" *ngIf="hideWhenNoGame">
       <i class="fas fa-plus custom-fa-plus"></i>
-      Add Student
+      Add a new Game
     </a>
   </div>
-  
+  <br/>
   <div class="pricing-header mx-auto">
   
     <!-- No data shows when their is no student data available -->
@@ -15,7 +15,7 @@
       <p class="nodata-msg">No student added yet!</p>
       <a routerLink="/register-game" class="btn btn-success">
         <i class="fas fa-plus custom-fa-plus"></i>
-        Add Student
+        Add a new Game
       </a>
     </div>
   
@@ -34,11 +34,11 @@
         <tbody>
           <!-- *ngFor loop iterates over Student array and fetch the student's data -->
           <!-- paginate pipe will add pagination in game's list, it won't show if items are less then 7 -->
-          <tr style="margin-top:30px" *ngFor="let game of Game | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+          <tr *ngFor="let game of Game | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
             <th scope="row">{{game.$key}}</th>
-            <td><strong>{{game.title}}</strong></td>
-            <td>{{game.description}}</td>
-            <td><img src={{game.photo}} style="width: 300px; height: 100px;"/> </td>
+            <td style="margin-top:50px!important;"><strong>{{game.title}}</strong></td>
+            <td style="margin-top:50px;">{{game.description}}</td>
+            <td style="margin-top:50px;"><img src={{game.photo}} style="width: 300px; height: 100px;"/> </td>
             <td class="text-center action-block">
               <!-- routerLink="/game-edit/{{student.$key}}" is refered to { path: 'game-edit/:id', component: EditStudentComponent } in app-routing.moudles.ts -->
               <i class="far fa-edit" routerLink="/game-edit/{{game.$key}}"></i>

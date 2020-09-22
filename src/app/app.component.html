@@ -1,28 +1,33 @@
-<div class="container">
+<!-- <div class="container"> -->
 <app-header></app-header>
-</div>
-<h1 style="text-align:center;">Welcome to Game Lister CRUD !</h1>
+<!-- </div> -->
+
+<h1 class="font-nav" style="text-align:center;">Welcome to Game Lister CRUD !</h1>
+<img src="https://giffiles.alphacoders.com/257/257.gif" style="width: 170px; float: right; display: block; margin-left: auto; margin-right: 46%;"/>
+
 
 <!-- Top navigation -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/register-game">
     
-    <span class="dasboard-text">Therichpost</span>
+    <span style="font-size: 30px;" class="dasboard-text"><i class="fas fa-bars"></i>&nbsp;&nbsp;Menu</span>
   </a>
-  <ul class="navbar-nav px-3">
+  
+  <!-- <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" routerLink="/register-game">
         <span class="user-image" style="background-image: url('assets/user.jpg')"></span>
         Hello Ajay
       </a>
     </li>
-  </ul>
+  </ul> -->
 </nav>
+<hr/>
 <!-- Sidebar navigation -->
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-md-block bg-light sidebar" style="margin-top: 70px;">
-      <div class="sidebar-sticky">
+    <nav class="col-md-2 d-md-block bg-light sidebar" style="margin-top: 70px; margin-left: 20px;">
+      <div style="font-size: 20px;" class="sidebar-sticky">
         <ul class="nav flex-column">
           <!-- routerLink="/register-game" to navigate to game-list component -->
           <li class="nav-item">
@@ -37,11 +42,22 @@
               <i class="fas fa-list-ul">&nbsp;&nbsp;</i>Games List
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/game-list" routerLinkActive="active">
+              <i class="fab fa-google">&nbsp;&nbsp;</i>Sign in with Google
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
+    <div class="container">
+      <div class="border-center">
+    <img style="width: 200px; float: right; margin-right:100px" src="https://img1.freepng.fr/20180325/gee/kisspng-playstation-4-joystick-playstation-3-game-controll-joystick-5ab72ee27a7e67.6136780815219545305017.jpg"/>
+    <h2 style="margin-left: 50px"><strong>Simple : click on "Add a new game" in the sidebar to create the game that you want to add in your list !</strong></h2>
+  </div>
+</div>
     <!-- Main content -->
-    <main role="main" style="margin-top: 50px;" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="margin-left: 20px;">
       <div class="inner-adjust">
         <!-- Use router template to show the components for which router service is activated -->
         <router-outlet></router-outlet>
