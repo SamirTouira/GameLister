@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Games List</h1>
+    <!-- It won't show if there is no student data -->
+    <a routerLink="/register-game" class="btn btn-success" *ngIf="hideWhenNoGame">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Student
+    </a>
+  </div>
+  
+  <div class="pricing-header mx-auto">
+  
+    <!-- No data shows when their is no student data available -->
+    <div class="no-data text-center" *ngIf="noData">
+      
+      <p class="nodata-msg">No student added yet!</p>
+      <a routerLink="/register-game" class="btn btn-success">
+        <i class="fas fa-plus custom-fa-plus"></i>
+        Add Student
+      </a>
+    </div>
+  
+    <!-- Showing students data -->
+    <div class="table-responsive" *ngIf="hideWhenNoGame">
+      <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+            <th class="text-center" scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- *ngFor loop iterates over Student array and fetch the student's data -->
+          <!-- paginate pipe will add pagination in game's list, it won't show if items are less then 7 -->
+          <tr style="margin-top:30px" *ngFor="let game of Game | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+            <th scope="row">{{game.$key}}</th>
+            <td><strong>{{game.title}}</strong></td>
+            <td>{{game.description}}</td>
+            <td><img src={{game.photo}} style="width: 300px; height: 100px;"/> </td>
+            <td class="text-center action-block">
+              <!-- routerLink="/game-edit/{{student.$key}}" is refered to { path: 'game-edit/:id', component: EditStudentComponent } in app-routing.moudles.ts -->
+              <i class="far fa-edit" routerLink="/game-edit/{{game.$key}}"></i>
+              <i class="far fa-trash-alt" (click)="deleteGame(game)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Pagination -->
+    <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+  </div>

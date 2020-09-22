@@ -2,3 +2,50 @@
 <app-header></app-header>
 </div>
 <h1 style="text-align:center;">Welcome to Game Lister CRUD !</h1>
+
+<!-- Top navigation -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/register-game">
+    
+    <span class="dasboard-text">Therichpost</span>
+  </a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" routerLink="/register-game">
+        <span class="user-image" style="background-image: url('assets/user.jpg')"></span>
+        Hello Ajay
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- Sidebar navigation -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-md-block bg-light sidebar" style="margin-top: 70px;">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <!-- routerLink="/register-game" to navigate to game-list component -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register-game" routerLinkActive="active">
+              <i class="fas fa-plus">&nbsp;&nbsp;</i>Add a new Game
+            </a>
+          </li>
+          <!-- routerLink="/game-list" to navigate to game-list component -->
+          <!-- routerLinkActive="active" activates active class for component-->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/game-list" routerLinkActive="active">
+              <i class="fas fa-list-ul">&nbsp;&nbsp;</i>Games List
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Main content -->
+    <main role="main" style="margin-top: 50px;" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <!-- Use router template to show the components for which router service is activated -->
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>
